@@ -1,0 +1,117 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea\
+* .idea\.name
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\scopes\
+* .idea\scopes\scope_settings.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* LICENSE
+* app\
+* app\build.gradle
+* app\src\
+* app\src\main\
+* app\src\main\AndroidManifest.xml
+* app\src\main\java\
+* app\src\main\java\com\
+* app\src\main\java\com\rallydev\
+* app\src\main\java\com\rallydev\rallydroid\
+* app\src\main\java\com\rallydev\rallydroid\ActivityHelper.java
+* app\src\main\java\com\rallydev\rallydroid\ArtifactView.java
+* app\src\main\java\com\rallydev\rallydroid\IterationStatus.java
+* app\src\main\java\com\rallydev\rallydroid\MyTasks.java
+* app\src\main\java\com\rallydev\rallydroid\Points.java
+* app\src\main\java\com\rallydev\rallydroid\PokerDisplay.java
+* app\src\main\java\com\rallydev\rallydroid\PokerSelection.java
+* app\src\main\java\com\rallydev\rallydroid\Preferences.java
+* app\src\main\java\com\rallydev\rallydroid\RallyActivity.java
+* app\src\main\java\com\rallydev\rallydroid\RallyConnection.java
+* app\src\main\java\com\rallydev\rallydroid\RallyListActivity.java
+* app\src\main\java\com\rallydev\rallydroid\RallyMain.java
+* app\src\main\java\com\rallydev\rallydroid\RecentActivity.java
+* app\src\main\java\com\rallydev\rallydroid\Settings.java
+* app\src\main\java\com\rallydev\rallydroid\StoryTasks.java
+* app\src\main\java\com\rallydev\rallydroid\TaskListActivity.java
+* app\src\main\java\com\rallydev\rallydroid\TaskProvider.java
+* app\src\main\java\com\rallydev\rallydroid\Util.java
+* app\src\main\java\com\rallydev\rallydroid\dto\
+* app\src\main\java\com\rallydev\rallydroid\dto\Activity.java
+* app\src\main\java\com\rallydev\rallydroid\dto\Artifact.java
+* app\src\main\java\com\rallydev\rallydroid\dto\DomainObject.java
+* app\src\main\java\com\rallydev\rallydroid\dto\Iteration.java
+* app\src\main\java\com\rallydev\rallydroid\dto\Story.java
+* app\src\main\java\com\rallydev\rallydroid\dto\User.java
+* app\src\main\res\
+* app\src\main\res\drawable\
+* app\src\main\res\drawable\card0.jpg
+* app\src\main\res\drawable\card1.jpg
+* app\src\main\res\drawable\card100.jpg
+* app\src\main\res\drawable\card13.jpg
+* app\src\main\res\drawable\card2.png
+* app\src\main\res\drawable\card20.jpg
+* app\src\main\res\drawable\card3.jpg
+* app\src\main\res\drawable\card40.jpg
+* app\src\main\res\drawable\card5.jpg
+* app\src\main\res\drawable\card8.jpg
+* app\src\main\res\drawable\cardq.jpg
+* app\src\main\res\drawable\headback.9.png
+* app\src\main\res\drawable\icon.png
+* app\src\main\res\drawable\logo.png
+* app\src\main\res\layout\
+* app\src\main\res\layout\artifactlist.xml
+* app\src\main\res\layout\card_list.xml
+* app\src\main\res\layout\card_view.xml
+* app\src\main\res\layout\main.xml
+* app\src\main\res\layout\settings.xml
+* app\src\main\res\layout\view_recent_activity.xml
+* app\src\main\res\layout\view_story.xml
+* app\src\main\res\layout\view_task.xml
+* app\src\main\res\values\
+* app\src\main\res\values\strings.xml
+* app\src\main\res\values\styles.xml
+* build.gradle
+* default.properties
+* gradle\
+* gradle\wrapper\
+* gradle\wrapper\gradle-wrapper.jar
+* gradle\wrapper\gradle-wrapper.properties
+* gradlew
+* gradlew.bat
+* settings.gradle
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
