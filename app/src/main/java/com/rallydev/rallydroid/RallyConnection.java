@@ -44,16 +44,25 @@ public class RallyConnection {
 			try {
 				Log.i("user", "Retrieving current user");
 
-				JSONObject adHocQuery = new JSONObject();
-				adHocQuery.put("#user", "/user");
-				adHocQuery.put("userName", "${#user.DisplayName}");
-				adHocQuery
-						.put("subscriptionName", "${#user.Subscription.Name}");
+                String query = "(Username = " + this.userName + ")";
+                String url = getApiUrlBase() + "/user?query=" + URLEncoder.encode(query)+"&fetch=true&pretty=true";;
 
-				JSONObject userObject = getAdHocResult(adHocQuery);
-				if (userObject != null)
-					user = new User(userObject.getString("userName"),
-							userObject.getString("subscriptionName"));
+                try {
+                    JSONObject queryResult = getResult(url)
+                            .getJSONObject("QueryResult");
+                    JSONArray results = queryResult.getJSONArray("Results");
+                    for (int i = 0; i < results.length(); i++) {
+                        JSONObject userObject = (JSONObject) results.get(i);
+
+                        user = new User(userObject.getString("DisplayName"),
+                                userObject.getString("SubscriptionPermission"));
+
+                    }
+                } catch (Exception e) {
+                    Log.e("task", "Error retrieving tasks " + e.toString());
+                }
+
+
 			} catch (Exception e) {
 				Log.e("user", e.toString());
 			}
@@ -72,13 +81,15 @@ public class RallyConnection {
 
 		if (iteration == null) {
 			try {
-				JSONObject adHocQuery = new JSONObject();
-				adHocQuery.put("iteration", "/iteration:current");
-				JSONObject iterationObject = getAdHocResult(adHocQuery)
-						.getJSONObject("iteration");
+
+                String url = getApiUrlBase() + "/iteration:current";;
+
+
+                JSONObject iterationObject = getResult(url)
+						.getJSONObject("Iteration");
 
 				String name = iterationObject.getString("Name");
-				int oid = iterationObject.getInt("ObjectID");
+				Long oid = iterationObject.getLong("ObjectID");
 
 				iteration = new Iteration(name, oid);
 			} catch (Exception e) {
@@ -92,14 +103,14 @@ public class RallyConnection {
 	public List<Story> getStoriesForCurrentIteration() {
 
 		try {
-			JSONObject adHocQuery = new JSONObject();
-			adHocQuery
-					.put(
-							"stories",
-							"/hierarchicalrequirement?query=(Iteration = ${/iteration:current})&fetch=true&pretty=true");
 
-			JSONObject storiesObject = getAdHocResult(adHocQuery)
-					.getJSONObject("stories");
+            Iteration currentIteration = getCurrentIteration();
+
+            String url = getApiUrlBase() + "/hierarchicalrequirement?query="+
+                    URLEncoder.encode("(Iteration.ObjectID = "+currentIteration.getOid()+")")+"&fetch=true&pretty=true";
+
+
+            JSONObject storiesObject = getResult(url).getJSONObject("QueryResult");
 			JSONArray resultsArray = storiesObject.getJSONArray("Results");
 
 			List<Story> stories = new ArrayList<Story>();
@@ -163,13 +174,13 @@ public class RallyConnection {
 		String query = "(Owner = " + this.userName + ")";
 		Iteration it = getCurrentIteration();
 		if (it != null)
-			query = "(" + query + " and (Iteration.Oid = " + it.getOid() + "))";
+			query = "(" + query + " and (Iteration.ObjectID = " + it.getOid() + "))";
 		return listTasks(query);
 	}
 
 	public List<DomainObject> listTasks(String query) {
 
-		String url = getApiUrlBase() + "/task.js?query="
+		String url = getApiUrlBase() + "/task?query="
 				+ URLEncoder.encode(query) + "&fetch=true&pretty=true";
 		List<DomainObject> ret = new ArrayList<DomainObject>();
 		try {
@@ -200,8 +211,8 @@ public class RallyConnection {
 		DefaultHttpClient httpclient = getClient();
 		try {
 			HttpGet httpget = new HttpGet(uri);
-            httpget.addHeader("Authorization", "Basic " +
-                    Base64.encodeToString((userName + ":" + password).getBytes(), Base64.DEFAULT));
+            String authKey = Base64.encodeToString((userName + ":" + password).getBytes(), Base64.DEFAULT).replaceAll("\\n", "");
+            httpget.addHeader("Authorization", "Basic "+ authKey) ;
 			HttpResponse response = httpclient.execute(httpget);
 			StatusLine status = response.getStatusLine();
 			int statusCode = status.getStatusCode();

@@ -24,15 +24,15 @@ import org.json.JSONObject;
 import android.util.Log;
 
 public class DomainObject implements Serializable {
-	private Integer oid;
+	private Long oid;
 	private String creationDate;
 	protected JSONObject object;
 	
-	public Integer getOid() {
+	public Long getOid() {
 		return oid;
 	}
 
-	public void setOid(Integer oid) {
+	public void setOid(Long oid) {
 		this.oid = oid;
 	}
 
@@ -52,7 +52,7 @@ public class DomainObject implements Serializable {
 		this.object = object;
 		try {
 			this.creationDate = object.getString("CreationDate");
-			this.oid = object.getInt("ObjectID");
+			this.oid = object.getLong("ObjectID");
 		} catch (JSONException e) {
 			throw new IllegalArgumentException(
 					"Object not correctly populated", e);

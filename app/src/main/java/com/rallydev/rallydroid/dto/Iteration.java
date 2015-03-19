@@ -20,16 +20,16 @@ package com.rallydev.rallydroid.dto;
 import java.io.Serializable;
 
 public class Iteration implements Serializable {
-	public Iteration(String name, Integer oid) {
+	public Iteration(String name, Long oid) {
 		super();
 		this.name = name;
 		this.oid = oid;
 	}
 	
-	private Integer oid;
+	private Long oid;
 	private String name;
 	
-	public Integer getOid() {
+	public Long getOid() {
 		return oid;
 	}
 	

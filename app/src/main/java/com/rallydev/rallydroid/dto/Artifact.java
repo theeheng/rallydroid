@@ -26,7 +26,7 @@ import android.util.Log;
 public class Artifact extends DomainObject implements Serializable {
 	private String formattedID;
 	private String ref;
-	private Integer oid;
+	private Long oid;
 	private String type;
 	private String name;
 	protected JSONObject object;
@@ -43,7 +43,7 @@ public class Artifact extends DomainObject implements Serializable {
 			this.type = object.getString("_type");
 			this.ref = object.getString("_ref");
 			this.formattedID = object.getString("FormattedID");
-			this.oid = object.getInt("ObjectID");
+			this.oid = object.getLong("ObjectID");
 			this.name = object.getString("Name");
 		} catch(JSONException e) {
 			throw new IllegalArgumentException("Object not correctly populated", e);
@@ -55,7 +55,7 @@ public class Artifact extends DomainObject implements Serializable {
 	public String getRef() {
 		return ref;
 	}
-	public Integer getOid() {
+	public Long getOid() {
 		return oid;
 	}
 	public String getType() {
