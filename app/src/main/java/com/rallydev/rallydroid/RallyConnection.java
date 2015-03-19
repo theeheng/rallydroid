@@ -134,16 +134,15 @@ public class RallyConnection {
 
 	public List<Activity> getRecentActivities() {
 		try {
-			JSONObject adHocQuery = new JSONObject();
+
 			// should include workspace in this query? Need scoping:
 			// workspace=https://rally1.rallydev.com/slm/webservice/1.17/workspace/41529001
-			adHocQuery
-					.put(
-							"recentActivities",
-							"/conversationpost?order=CreationDate DESC&start=1&pagesize=20&fetch=true&pretty=true");
-			JSONObject recentActivitiesObject = getAdHocResult(adHocQuery)
-					.getJSONObject("recentActivities");
-			JSONArray resultsArray = recentActivitiesObject
+
+            String url = getApiUrlBase() + "/conversationpost?order=CreationDate+DESC&start=1&pagesize=20&fetch=true&pretty=true";
+
+            JSONObject recentActivitiesObject = getResult(url).getJSONObject("QueryResult");
+
+            JSONArray resultsArray = recentActivitiesObject
 					.getJSONArray("Results");
 
 			List<Activity> recentActivities = new ArrayList<Activity>();
@@ -201,11 +200,13 @@ public class RallyConnection {
 		return "https://" + domain + "/slm/webservice/" + apiVersion;
 	}
 
+	/*Deprecated for API v2.0
 	private JSONObject getAdHocResult(JSONObject adHocQuery) throws Exception {
 		String url = getApiUrlBase() + "/adhoc.js?_method=POST&adHocQuery="
 				+ URLEncoder.encode(adHocQuery.toString()) + "&pretty=true";
 		return getResult(url);
 	}
+	*/
 
 	protected JSONObject getResult(String uri) throws Exception {
 		DefaultHttpClient httpclient = getClient();

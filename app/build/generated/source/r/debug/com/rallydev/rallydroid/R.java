@@ -39,9 +39,12 @@ public final class R {
         public static final int TableRow01=0x7f07001f;
         public static final int TableRow02=0x7f070027;
         public static final int TableRow03=0x7f070029;
+        public static final int TableRow04=0x7f070030;
         public static final int TextView01=0x7f070001;
         public static final int TextView02=0x7f070020;
         public static final int TextView03=0x7f07002a;
+        public static final int TextView04=0x7f07002f;
+        public static final int TextView05=0x7f070031;
         public static final int button_eight=0x7f070007;
         public static final int button_five=0x7f070006;
         public static final int button_forty=0x7f07000a;
