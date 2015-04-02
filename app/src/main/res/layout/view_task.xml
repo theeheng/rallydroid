@@ -4,7 +4,7 @@
 <LinearLayout android:id="@+id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
 <TextView 
 	android:layout_height="wrap_content" 
-	android:layout_width="fill_parent" 
+	android:layout_width="wrap_content"
 	android:id="@+id/task_nameView" 
 	android:text="Task Name"
 	android:textSize="16sp" 
@@ -12,7 +12,7 @@
 	android:textStyle="bold" />
 <TextView 
 	android:layout_height="wrap_content" 
-	android:layout_width="fill_parent" 
+	android:layout_width="wrap_content"
 	android:id="@+id/story_nameView" 
 	android:text="Story Name"
 	android:padding="5sp" />

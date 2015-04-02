@@ -1,10 +1,14 @@
 package com.rallydev.rallydroid;
 
-import java.io.InputStream;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import android.util.Base64;
+import android.util.Log;
+
+import com.rallydev.rallydroid.dto.Activity;
+import com.rallydev.rallydroid.dto.Artifact;
+import com.rallydev.rallydroid.dto.DomainObject;
+import com.rallydev.rallydroid.dto.Iteration;
+import com.rallydev.rallydroid.dto.Story;
+import com.rallydev.rallydroid.dto.User;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -16,15 +20,11 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import android.util.Base64;
-import android.util.Log;
-
-import com.rallydev.rallydroid.dto.Activity;
-import com.rallydev.rallydroid.dto.Artifact;
-import com.rallydev.rallydroid.dto.DomainObject;
-import com.rallydev.rallydroid.dto.Iteration;
-import com.rallydev.rallydroid.dto.Story;
-import com.rallydev.rallydroid.dto.User;
+import java.io.InputStream;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class RallyConnection {
 	private String userName;

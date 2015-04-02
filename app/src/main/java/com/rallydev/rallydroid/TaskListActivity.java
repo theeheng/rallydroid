@@ -16,15 +16,15 @@
   
 package com.rallydev.rallydroid;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Dialog;
 import android.util.Log;
 import android.widget.TextView;
 
 import com.rallydev.rallydroid.dto.Artifact;
 import com.rallydev.rallydroid.dto.DomainObject;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public abstract class TaskListActivity extends RallyListActivity {
 	    

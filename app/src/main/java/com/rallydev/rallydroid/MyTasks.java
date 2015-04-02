@@ -16,14 +16,14 @@
   
 package com.rallydev.rallydroid;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.rallydev.rallydroid.dto.Artifact;
 import com.rallydev.rallydroid.dto.DomainObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyTasks extends TaskListActivity {
 	private final int MENU_OPEN = 1;

@@ -16,8 +16,6 @@
   
 package com.rallydev.rallydroid;
 
-import java.util.List;
-
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +24,8 @@ import android.view.MenuItem;
 
 import com.rallydev.rallydroid.dto.Artifact;
 import com.rallydev.rallydroid.dto.DomainObject;
+
+import java.util.List;
 
 public class StoryTasks extends TaskListActivity {
 	private final int MENU_REFRESH = 10;

@@ -1,12 +1,12 @@
 package com.rallydev.rallydroid;
 
-import static com.rallydev.rallydroid.Preferences.PASSWORD;
-import static com.rallydev.rallydroid.Preferences.USERNAME;
+import android.app.Activity;
+import android.content.SharedPreferences;
 
 import com.rallydev.rallydroid.dto.User;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
+import static com.rallydev.rallydroid.Preferences.PASSWORD;
+import static com.rallydev.rallydroid.Preferences.USERNAME;
 
 public class ActivityHelper {
 	private Activity activity;

@@ -16,12 +16,12 @@
 
 package com.rallydev.rallydroid.dto;
 
-import java.io.Serializable;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
+import java.io.Serializable;
 
 public class DomainObject implements Serializable {
 	private Long oid;

@@ -16,8 +16,18 @@
 
 package com.rallydev.rallydroid;
 
-import static com.rallydev.rallydroid.Util.stripHTML;
-import static com.rallydev.rallydroid.Util.trim;
+import android.app.Dialog;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.TextView;
+
+import com.rallydev.rallydroid.dto.Activity;
+import com.rallydev.rallydroid.dto.DomainObject;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -25,18 +35,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import android.app.Dialog;
-import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
-import android.widget.TextView;
-import android.widget.AdapterView.AdapterContextMenuInfo;
-
-import com.rallydev.rallydroid.dto.Activity;
-import com.rallydev.rallydroid.dto.DomainObject;
+import static com.rallydev.rallydroid.Util.stripHTML;
+import static com.rallydev.rallydroid.Util.trim;
 
 public class RecentActivity extends RallyListActivity {
 	private final int MENU_REFRESH = 10;

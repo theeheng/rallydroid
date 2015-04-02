@@ -16,14 +16,14 @@
   
 package com.rallydev.rallydroid;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class PokerSelection extends Activity {
 	/** Called when the activity is first created. */

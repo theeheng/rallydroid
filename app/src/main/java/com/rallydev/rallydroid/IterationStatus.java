@@ -16,23 +16,23 @@
   
 package com.rallydev.rallydroid;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
-import android.widget.TextView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.TextView;
 
 import com.rallydev.rallydroid.dto.Artifact;
 import com.rallydev.rallydroid.dto.DomainObject;
 import com.rallydev.rallydroid.dto.Story;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.rallydev.rallydroid.Util.stripHTML;
 

@@ -16,11 +16,6 @@
   
 package com.rallydev.rallydroid;
 
-import static com.rallydev.rallydroid.Preferences.PASSWORD;
-import static com.rallydev.rallydroid.Preferences.USERNAME;
-
-import com.rallydev.rallydroid.dto.User;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
@@ -28,6 +23,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.rallydev.rallydroid.dto.User;
+
+import static com.rallydev.rallydroid.Preferences.PASSWORD;
+import static com.rallydev.rallydroid.Preferences.USERNAME;
 
 public class Settings extends RallyActivity {
 	@Override
